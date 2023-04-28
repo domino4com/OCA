@@ -1,21 +1,22 @@
 <img src="assets/IWA.svg" width=200 align="right">
 
-# IWA - Input Weather A
-This is a Weather Sensor measuring Atmospheric **Temperature** and Relative **Humidity**
+# OCA - Output Control MOSFET
+2x MOSFET output and 2x GPIO
 | Specifications | |
 | --: | :--: |
 | Communication | I²C |
-| I²C Address | 0x44 |
-| ChipSet | Sensirion SHT30-DIS|
-| Datasheet | [.pdf](https://.pdf) |
-| Suggested Arduino Library | [GitHub](https://github.com/) |
-| Temperature Accuracy | ±0.2 °C |
-| Temperature Range | -40 to 125 °C |
-| Humidity Accuracy | ± 2 %RH |
-| Humidity Range | 0 to 100 %RH |
+| I²C Address | 0x20 (0x21) |
+| ChipSet | NXP PCF8574T|
+| Datasheet | [.pdf](https://www.nxp.com/docs/en/data-sheet/PCF8574_PCF8574A.pdf) |
+| Suggested Arduino Library | [GitHub](https://github.com/xreef/PCF8574_library) |
+| Channel 0 | MOSFET |
+| Channel 1 | MOSFET |
+| Channel 2 | GPIO |
+| Channel 3 | GPIO |
+| Channel 4-7 | N/A |
 
 ## Supported I²C Modes
-- [ ] 100 kbit/s Standard Mode (SM) 
+- [X] 100 kbit/s Standard Mode (SM) 
 - [ ] 400 kbit/s	Fast Mode	FM
 - [ ] 1 Mbit/s	Fast Mode Plus	FM+
 - [ ] 3.4Mbit/s	High Speed Mode	HS
