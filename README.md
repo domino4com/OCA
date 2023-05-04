@@ -9,6 +9,7 @@
 | ChipSet | NXP PCF8574T|
 | Datasheet | [.pdf](https://www.nxp.com/docs/en/data-sheet/PCF8574_PCF8574A.pdf) |
 | Suggested Arduino Library | [GitHub](https://github.com/xreef/PCF8574_library) |
+| Suggested MicroPython Library | [GitHub](https://github.com/mcauser/micropython-pcf8574)|
 | Channel 0 | MOSFET |
 | Channel 1 | MOSFET |
 | Channel 2 | GPIO |
