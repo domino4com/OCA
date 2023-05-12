@@ -12,8 +12,8 @@
 | Suggested MicroPython Library | [GitHub](https://github.com/mcauser/micropython-pcf8574)|
 | Channel 0 | MOSFET |
 | Channel 1 | MOSFET |
-| Channel 2 | GPIO |
-| Channel 3 | GPIO |
+| Channel 2 | GPIO HIGH/LOW Reversed |
+| Channel 3 | GPIO HIGH/LOW Reversed|
 | Channel 4-7 | N/A |
 
 ## Supported I²C Modes
