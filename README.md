@@ -23,6 +23,51 @@
 - [ ] 3.4Mbit/s	High Speed Mode	HS
 - [ ] 5 Mbit/s	Ultra Fast Mode	UFM
 
+## Arduino Code Example
+```C
+// LED's on MOSFET1 and MOSFET2, switch on GPIO4.
+
+#include "Arduino.h"
+#include "PCF8574.h"
+
+PCF8574 OCA(0x20);
+// Right to Left
+#define MOSFET1 P0
+#define MOSFET2 P1
+#define GPIO3 P2
+#define GPIO4 P3
+
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+  OCA.pinMode(MOSFET1, OUTPUT);
+  OCA.pinMode(MOSFET2, OUTPUT);
+  OCA.pinMode(GPIO3, OUTPUT);
+  OCA.pinMode(GPIO4, INPUT);
+  Serial.print("Init OCA...");
+  if (OCA.begin()) {
+    Serial.println("OK");
+  } else {
+    Serial.println("KO");
+  }
+  OCA.digitalWrite(MOSFET1, LOW);
+  OCA.digitalWrite(MOSFET2, LOW);
+  OCA.digitalWrite(GPIO3, LOW);
+}
+
+void loop() {
+  if (OCA.digitalRead(GPIO4)) {
+    OCA.digitalWrite(MOSFET1, LOW);
+    OCA.digitalWrite(MOSFET2, HIGH);
+  } else {
+    OCA.digitalWrite(MOSFET1, HIGH);
+    OCA.digitalWrite(MOSFET2, LOW);
+  }
+  delay(15); //Minimum delay for this to work!
+}
+```
+
+
 # License: 
 <img src="assets/CC-BY-NC-SA.svg" width=200 align="right">
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
